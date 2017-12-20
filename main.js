@@ -11,6 +11,7 @@ let initialState = (width, height) => {
     for(let i = 0; i < 4; i++){
         let row = [];
         for(let j = 0; j < 4; j++){
+            row.push(false);
         }
         arr.push(row)
     }
@@ -105,7 +106,6 @@ let renderRandomShape = () => {
 
 let rotateShape = (state) => {
     let rotatedState = initialState();
-
     // Check length of field
     for(let i = 0; i < state.length; i++){
         state[i].reverse();
@@ -130,3 +130,4 @@ let rotateLeft = () => {
 
 document.querySelector("#random").addEventListener("click", renderRandomShape);
 document.querySelector("#rotate").addEventListener("click", rotateLeft);
+
